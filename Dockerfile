@@ -7,14 +7,14 @@
 # Pull base image
 FROM selenium/node-chrome
 
-RUN groupadd --gid 1000 node \
-  && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
+RUN groupadd --gid 1078 node \
+  && useradd --uid 1078 --gid node --shell /bin/bash --create-home node
 
 # Define working directory
 WORKDIR /root
 
-RUN getent group node || groupadd --gid 1000 node \
-  && id -u node &>/dev/null || useradd --uid 1000 --gid node --shell /bin/bash --create-home node
+RUN getent group node || groupadd --gid 1078 node \
+  && id -u node &>/dev/null || useradd --uid 1078 --gid node --shell /bin/bash --create-home node
 
 ENV NODE_VERSION 11.8.0
 
